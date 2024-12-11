@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 600px;
+            border: 2px solid black;
+
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+
+        }
+    </style>
+</head>
+<body>
+    
+  <p id="draggable_tag" draggable="true" ondragstart="drag(event)" >i am draggble</p>
+  <img id="draggable_img"src ="/youtube.png"  draggable="true" ondragstart="drag(event)"  />
+ 
+  <div id="droppable_tag" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+ 
+<script>
+    function drag(e){
+        e.dataTransfer.setData("dragData",e.target.id)
+    }
+
+    function allowDrop(e){
+        e.preventDefault()  
+    }
+    function drop(e){
+        const dropData = e.dataTransfer.getData("dragData")
+        e.target.appendChild(document.getElementById(dropData))
+    }
+</script>
+</body>
+
+</html>
