@@ -1,0 +1,11 @@
+.Board{
+    margin-top: 200px;
+    margin-left: 20px;
+    width: 300px;
+    height: 500px;
+    border: 2px solid black;
+}
+
+.Pictures{
+    width: 500px;
+}
